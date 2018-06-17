@@ -15,7 +15,7 @@ async def on_ready():
     """
     clear = lambda: os.system('cls')
     clear()
-    print('-' * len(bot.user.id))
+    print('-' * len(427295582399234048))
     print('Logged in as:')
     print(bot.user.name)
     print(bot.user.id)
@@ -23,8 +23,8 @@ async def on_ready():
     print('Bot currently running on {} servers:'.format(len(bot.servers)))
     for s in bot.servers:
         print(' - ' + s.name + ' :: ' + s.id)
-    print('-' * len(bot.user.id))
-    print('427295582399234048')
+    print('-' * len(427295582399234048))
+    print(' ')
 
     await bot.change_presence(game=discord.Game(name=c.game))
 
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 def exit_handler():
     """ What to do on exit.
     """
-    print('427295582399234048')
+    print(' ')
     print('exiting...')
 
 

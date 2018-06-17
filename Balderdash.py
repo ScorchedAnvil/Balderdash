@@ -24,7 +24,7 @@ async def on_ready():
     for s in bot.servers:
         print(' - ' + s.name + ' :: ' + s.id)
     print('-' * len(bot.user.id))
-    print(' ')
+    print('427295582399234048')
 
     await bot.change_presence(game=discord.Game(name=c.game))
 
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 def exit_handler():
     """ What to do on exit.
     """
-    print(' ')
+    print('427295582399234048')
     print('exiting...')
 
 

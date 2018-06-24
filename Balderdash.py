@@ -7,6 +7,10 @@ import random
 import asyncio
 import math
 
+STARTUP_EXTENSIONS = [
+					  'cogs.nonsense'
+                      ]
+
 bot = commands.Bot(command_prefix=c.prefix, description=c.description, pm_help=True)
 
 @bot.event

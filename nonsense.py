@@ -34,6 +34,7 @@ class Nonsense:
             >poke <@user> :message
         """
         mcont = ctx.message.content
+        mcont = mcont.replace("@", "")
         if mcont == c.prefix + 'poke':
             #If the User trys to Poke without a target.
             resp = ['*You broke the fourth wall!*',

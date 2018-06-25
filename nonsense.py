@@ -133,7 +133,7 @@ class Nonsense:
             await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug <@' + self.bot.user.id + '>':
             #If the User tries to hug the bot.
-            await self.bot.say('*Balderdash hugs @'+userid+'*')
+            await self.bot.say('*Balderdash hugs ' + ctx.message.author.name + '*')
             await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug <@' + userid + '>':
             #If the User tries to hug themselves.

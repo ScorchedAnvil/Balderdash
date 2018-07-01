@@ -167,6 +167,19 @@ class Nonsense:
             await self.bot.send_message(destination=void, content=cont)
             await self.bot.say("*Message sent to the void*")
             await self.bot.delete_message(ctx.message)
+            
+    @commands.command(pass_context=True)
+    async def cubacount(self, ctx):
+        # The number of times the morningness has been confirmed this session.
+        """ The number of times the morningness has been confirmed this session.
+            >cubacount
+        """
+        if c.cuba_count == 1:
+            await self.bot.say(
+                'The morningness of Cuba has been affirmed ' + str(c.cuba_count) + ' time this session.')
+        else:
+            await self.bot.say('The morningness of Cuba has been affirmed ' + str(c.cuba_count) + ' times this session.')
+        await self.bot.delete_message(ctx.message)
 
 def setup(bot):
     """ defines setup """

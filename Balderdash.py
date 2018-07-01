@@ -79,11 +79,26 @@ async def reload(extension_name: str):
 async def on_message(message):
     """ It is always morning in Cuba.
     """
-    if any(word in message.content for word in c.cuba):
-        chance = random.randint(1, 1000)
-        if chance <= 533:
-            await bot.send_message(message.channel, 'Except it is always morning in Cuba.')
-            c.cuba_count += 1
+    try:
+        if message.content.startswith(c.prefix):
+            print('command')
+        else:
+            if any(word in message.content for word in c.cuba):
+                chance = random.randint(1, 1000)
+                if chance <= 533:
+                    await bot.send_message(message.channel, 'Except it is always morning in Cuba.')
+                    c.cuba_count += 1
+                    pass
+                print(c.cuba_count)
+    except:
+        pass
+    finally:
+        if '>>' in message.content[:2]:
+            return
+        elif c.prefix in message.content[:1]:
+            print(
+                message.author.name + ' ' + message.author.mention + ' :: ' + message.server.name + ' :: ' + message.content)
+    await bot.process_commands(message)
 
 if __name__ == '__main__':
     for extension in STARTUP_EXTENSIONS:

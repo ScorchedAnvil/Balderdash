@@ -50,12 +50,11 @@ class Nonsense:
                     'Excuse me?']
             srandom = random.SystemRandom()
             await self.bot.say(srandom.choice(resp))
-            await self.bot.delete_message(ctx.message)
         else:
             #If the User pokes another user.
             await self.bot.say('*' + ctx.message.author.name +
                                ' poked' + mcont.replace(c.prefix + 'poke', '*'))
-            await self.bot.delete_message(ctx.message)
+        await self.bot.delete_message(ctx.message)
 
     @commands.command(pass_context=True)
     async def returnpoke(self, ctx):
@@ -80,12 +79,11 @@ class Nonsense:
                     'Excuse me?']
             srandom = random.SystemRandom()
             await self.bot.say(srandom.choice(resp))
-            await self.bot.delete_message(ctx.message)
         else:
             #If the User pokes another user.
             await self.bot.say('*' + ctx.message.author.name +
                                ' poked' + mcont.replace(c.prefix + 'returnpoke', '') + ' back.*')
-            await self.bot.delete_message(ctx.message)
+        await self.bot.delete_message(ctx.message)
 
     @commands.command(pass_context=True)
     async def hug(self, ctx):
@@ -99,23 +97,19 @@ class Nonsense:
             #If the user trys to hug without a target.
             await self.bot.say('*' + ctx.message.author.name + ' tries to hug the air*')
             await self.bot.say('*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*')
-            await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'hug <@' + self.bot.user.id + '>':
             #If the User tries to hug the bot.
             await self.bot.say(' Euh... you are hugging *me*? ' + 'I- I am quite flattered')
-            await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'hug <@' + userid + '>':
             #If the User tries to hug themselves.
             await self.bot.say(' Euh... you hug yourself. You know who you are. Good job. ')
-            await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'hug the air':
             #If the User tries to hug the air.
             await self.bot.say('Yes yes, very clever')
-            await self.bot.delete_message(ctx.message)
         else:
             #If the User tries to hug another user.
             await self.bot.say(ctx.message.author.name + ' hugged' + mcont.replace(c.prefix + 'hug', '') + ' :hearts:')
-            await self.bot.delete_message(ctx.message)
+        await self.bot.delete_message(ctx.message)
             
     @commands.command(pass_context=True)
     async def returnhug(self, ctx):
@@ -129,23 +123,19 @@ class Nonsense:
             #If the user trys to hug without a target.
             await self.bot.say('*' + ctx.message.author.name + ' tries to hug the air back*')
             await self.bot.say('*AAAAAAAAAAAAAAAAAAAAAAAAAAAA-wait what*')
-            await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug <@' + self.bot.user.id + '>':
             #If the User tries to hug the bot.
             await self.bot.say('*Balderdash hugs ' + ctx.message.author.name + '*')
-            await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug <@' + userid + '>':
             #If the User tries to hug themselves.
             await self.bot.say(' Euh... you hug yourself back? I am very confused.')
-            await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug the air':
             #If the User tries to hug the air.
             await self.bot.say('Yes yes, very clever')
-            await self.bot.delete_message(ctx.message)
         elif mcont >= c.prefix + 'returnhug':
             #If the User tries to hug another user.
             await self.bot.say(ctx.message.author.name + ' hugged' + mcont.replace(c.prefix + 'returnhug', '') + ' back. :hearts:')
-            await self.bot.delete_message(ctx.message)
+        await self.bot.delete_message(ctx.message)
 
     @commands.command(pass_context=True)
     async def void(self, ctx):
@@ -160,13 +150,12 @@ class Nonsense:
             cont = '*' + ctx.message.author.name + ' silently screams into the void* \n *AAAAAAAAAAAAAAAAAAAAAAAAAA*'
             await self.bot.send_message(destination=void, content=cont)
             await self.bot.say("*Message sent to the void*")
-            await self.bot.delete_message(ctx.message)
         else:
             #If the User tries to send a message to the Void.
             cont = '*' + ctx.message.author.name + ' screams, \"' + mcont.replace(c.prefix + 'void', '') + ',\" into the void*'
             await self.bot.send_message(destination=void, content=cont)
             await self.bot.say("*Message sent to the void*")
-            await self.bot.delete_message(ctx.message)
+        await self.bot.delete_message(ctx.message)
             
     @commands.command(pass_context=True)
     async def cubacount(self, ctx):

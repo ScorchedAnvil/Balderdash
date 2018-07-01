@@ -34,7 +34,6 @@ class Nonsense:
             >poke <@user> :message
         """
         mcont = ctx.message.content
-        mcont = mcont.replace("@", "")
         if mcont == c.prefix + 'poke':
             #If the User trys to Poke without a target.
             resp = ['*You broke the fourth wall!*',
@@ -133,7 +132,7 @@ class Nonsense:
             await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug <@' + self.bot.user.id + '>':
             #If the User tries to hug the bot.
-            await self.bot.say('*Balderdash hugs @'+userid+'*')
+            await self.bot.say('*Balderdash hugs ' + ctx.message.author.name + '*')
             await self.bot.delete_message(ctx.message)
         elif mcont == c.prefix + 'returnhug <@' + userid + '>':
             #If the User tries to hug themselves.
